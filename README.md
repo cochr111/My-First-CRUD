@@ -30,9 +30,9 @@ last_name, user_city) VALUES
 
 ### Step 3: Ensure The File Structure Is In Place
 
-You'll want to make sure the files are in the right folders and in the right place. I have included a .zip for download.
+You'll want to make sure the files are in the right folders and in the right place. I have included  CRUD.zip for download which includes the proper file structure.
 
-The Original code used tables and look circa 2002. I updated it with Bootstrap and now it looks a lot better.
+The original code used tables and look circa 2002. I updated it with Bootstrap and now I think it looks a lot better.
 
 ### Original Code Taken From
 
