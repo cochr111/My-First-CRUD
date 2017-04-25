@@ -1,9 +1,17 @@
 # My First CRUD
 
 ### Initialization
-Simple initialization with utf8 charset set by default:
-```php
-$db = new MysqliDb ('host', 'username', 'password', 'databaseName');
+First, you're going to need to create a database in MySQL. Once you do that, you'll have to create a table in the database with the following code; 
+
+```mySQL
+
+CREATE TABLE IF NOT EXISTS user_CRUD (
+  user_id int(11) NOT NULL AUTO_INCREMENT,
+  first_name varchar(25) NOT NULL,
+  last_name varchar(25) NOT NULL,
+  user_city varchar(50) NOT NULL,
+  PRIMARY KEY (user_id)
+);
 ```
 
 
