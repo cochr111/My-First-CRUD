@@ -1,6 +1,6 @@
 # My First CRUD
 
-### MySQL Instantiation
+### Step 1: MySQL Instantiation
 First, you're going to need to create a database in MySQL. Once you do that, you'll have to create a table in the database with the following code; 
 
 ```mySQL
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS user_CRUD (
 );
 ```
 
-### MySQL Initialization
+### Step 2: MySQL Initialization
 Once your table is created, you'll want to populate it with some basic entires. Use the following code to enter some interesting characters into your database table:
 
 ```mySQL
