@@ -1,0 +1,14 @@
+/*ALL elements have a margin of 0 and a padding of 0, thus we use the "*" selector    */
+*{
+	margin:0;
+	padding:0;
+}
+/*force bootstrap to fucking fit the right way.*/
+#login-form {
+	margin:5% auto;
+	max-width:500px;
+}
+/* item is on the home page */
+#wrapper{
+	padding-top:50px;
+}
