@@ -30,40 +30,9 @@ last_name, user_city) VALUES
 
 ### Step 3: Ensure The File Structure Is In Place
 
-You'll want to make sure the files are in the right folders and in the right place. Here's a diagram to help keep things clear.
+You'll want to make sure the files are in the right folders and in the right place. I have included a .zip for download.
 
-.
-├── ...                         # Root (Whatever you'd like the name to be!)
-+--assets                    
-|   +-- css
-            ├──bootstrap.css
-            ├──bootstrap.css.map 
-            ├──bootstrap.min  
-            ├──bootstrap.min.css.map  
-            ├──bootstrap-theme.css
-            ├──bootstrap-theme.css.map
-            ├──bootstrap-theme.min.css
-            ├──bootstrap-theme.min.css
-        ├── fonts
-            ├──glyphicons-halflings-regular.eot
-            ├──glyphicons-halflings-regular.svt
-            ├──glyphicons-halflings-regular.ttf
-            ├──glyphicons-halflings-regular.woff
-            ├──glyphicons-halflings-regular.woff2
-        ├── js  
-            ├──bootstrap.js
-            ├──bootstrap.min.js
-            ├──npm.js
-        ├── jquery-1.11.3-jquery.min 
-        
-    ├── add_data.php
-├── add_data.php    
-├── b_drop.png
-├── b_edit.png
-├── dbconfig.php
-├── edit_data.php
-├── index.php
-├── style.css
+The Original code used tables and look circa 2002. I updated it with Bootstrap and now it looks a lot better.
 
 ### Original Code Taken From
 
