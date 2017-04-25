@@ -32,9 +32,10 @@ last_name, user_city) VALUES
 
 You'll want to make sure the files are in the right folders and in the right place. Here's a diagram to help keep things clear.
 
+.
 ├── ...                         # Root (Whatever you'd like the name to be!)
-    ├── assets                    
-        ├── css
++--assets                    
+|   +-- css
             ├──bootstrap.css
             ├──bootstrap.css.map 
             ├──bootstrap.min  
