@@ -1,15 +1,5 @@
 <?php
-/*
-error_reporting(0);
-$host = "localhost";
-$user = "root";
-$password = "";
-$datbase = "dbtuts";
-mysql_connect($host,$user,$password);
-mysql_select_db($user_CRUD);
-*/
-
-/*Now, we define some constants, as this information will never change, and it is a string.*/
+/*Here, we define some constants, as this information will never change, and it is a string.*/
  define('DBHOST', 'localhost');
  define('DBUSER', 'UnivCalifornia');
  define('DBPASS', 'certification12345');
