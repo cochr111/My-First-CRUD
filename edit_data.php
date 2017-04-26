@@ -1,24 +1,41 @@
 <?php
+/*Here, we use the include_once function to ensure that our databse info stored in dbconfig is uploaded and thus usable on this page.*/
+
 include_once 'dbconfig.php';
+
+/*Here, we code the php to say, IF you get the message or the input from the button who's name is "edit_it" DO the following:
+1. Select all columns from the user_CRUD table WHERE the the user_id= THE RESULT OF THE mysql_fetch_row($result_set) function in the index.php file.
+2. Set the variable result_set equal to the result of that query, or more simply, that information that was extracted in step 1 
+3. Place the result in an array, so we can use it later.
+*/
 if(isset($_GET['edit_id']))
 {
 	$sql_query="SELECT * FROM user_CRUD WHERE user_id=".$_GET['edit_id'];
 	$result_set=mysql_query($sql_query);
 	$fetched_row=mysql_fetch_array($result_set);
 }
+
+
+/*
+If the user clicks the button with the name "btn-save", which in the HTML is actually: 
+
+<input id="submit" name="btn-update" type="submit" value="&nbsp;&nbsp;&nbsp;Update User Info&nbsp;&nbsp;&nbsp;" class="btn btn-info">
+ 
+ DO THE FOLLOWING
+*/
 if(isset($_POST['btn-update']))
 {
-	// variables for input data
+/*Create 3 variables that will store the information that the user entered in the form under first name, last name, and city.*/
 	$first_name = $_POST['first_name'];
 	$last_name = $_POST['last_name'];
 	$city_name = $_POST['city_name'];
-	// variables for input data
 	
-	// sql query for update data into database
+/*Create another variable that will UPDATE the information in the user_CRUD database under first_name, last_name, and user_city WHERE their user_id = the edit ID extracted on the index.php page*/
+
 	$sql_query = "UPDATE user_CRUD SET first_name='$first_name',last_name='$last_name',user_city='$city_name' WHERE user_id=".$_GET['edit_id'];
-	// sql query for update data into database
+
 	
-	// sql query execution function
+/*If the user updates the user information correctly, just as in add_data.php, alert them that they have updated it correctly, and then take them back to the homepage so they can immediately see their changes.*/
 	if(mysql_query($sql_query))
 	{
 		?>
@@ -28,21 +45,24 @@ if(isset($_POST['btn-update']))
 		</script>
 		<?php
 	}
+	/*If the user makes a mistake OR, if the database has an error, let the user know */
 	else
 	{
 		?>
 		<script type="text/javascript">
-		alert('error occured while updating data');
+		alert('There was an error while updating the user data');
 		</script>
 		<?php
 	}
-	// sql query execution function
 }
+
+/*If the user changes their mind, and wants to cancel the changes, this will take them back to the home page if the click the button with the name "btn-cancel"*/
 if(isset($_POST['btn-cancel']))
 {
 	header("Location: index.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
