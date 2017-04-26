@@ -1,18 +1,25 @@
 <?php
+/*Here, we use the include_once function to ensure that our databse info stored in dbconfig is uploaded and thus usable on this page.*/
 include_once 'dbconfig.php';
+
+/*If the user clicks the button with the name "btn-save", which in the HTML is actually: 
+
+<input id="submit" name="btn-save" type="submit" value="&nbsp;&nbsp;Add User To Database&nbsp;" class="btn btn-info">
+ 
+ DO THE FOLLOWING
+*/
 if(isset($_POST['btn-save']))
 {
-	// variables for input data
+/*Create 3 variables that will store the information that the user entered in the form under first name, last name, and city.*/
 	$first_name = $_POST['first_name'];
 	$last_name = $_POST['last_name'];
 	$city_name = $_POST['city_name'];
-	// variables for input data
+
 	
-	// sql query for inserting data into database
+/*Create another variable that will insert the information into the user_CRUD database under first_name, last_name, and user_city.*/
 	$sql_query = "INSERT INTO user_CRUD (first_name,last_name,user_city) VALUES('$first_name','$last_name','$city_name')";
-	// sql query for inserting data into database
 	
-	// sql query execution function
+/*Here, we get a little scripty. If the information has been entered into the database, we want the user to know that. Thus, we are going to use basic javascript to let them know, hey, the information has been added. So, we use a simple alert in a script tag in the html. Also, once the information has been added, we probably also want the user to go back to the page with the users on it to see the user they've added, so, change window location. */
 	if(mysql_query($sql_query))
 	{
 		?>
@@ -22,6 +29,7 @@ if(isset($_POST['btn-save']))
 		</script>
 		<?php
 	}
+	/*If this does not happen, or if there is some kind of error when adding the information into the database, a different alert will show, and no redirect will happen.*/
 	else
 	{
 		?>
@@ -30,9 +38,9 @@ if(isset($_POST['btn-save']))
 		</script>
 		<?php
 	}
-	// sql query execution function
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
