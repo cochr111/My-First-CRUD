@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS user_CRUD (
 ```
 
 ### Step 2: MySQL Initialization
-Once your table is created, you'll want to populate it with some basic entires. Use the following code to enter some interesting characters into your database table:
+Once your table is created, you'll want to populate it with some basic entries. Use the following code to enter some interesting characters into your database table:
 
 ```mySQL
 
@@ -30,7 +30,7 @@ last_name, user_city) VALUES
 
 ### Step 3: Ensure The File Structure Is In Place
 
-You'll want to make sure the files are in the right folders and in the right place. I have included  CRUD.zip for download which includes the proper file structure.
+You'll want to make sure the files are in the right folders and in the right place. I have included CRUD.zip for download which includes the proper file structure.
 
 The original code used tables and look circa 2002. I updated it with Bootstrap and now I think it looks a lot better.
 
