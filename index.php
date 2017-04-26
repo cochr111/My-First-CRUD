@@ -1,14 +1,15 @@
 <?php
+/*Here, we use the include_once function to ensure that our databse info stored in dbconfig is uploaded and thus usable on this page.*/
+
 include_once 'dbconfig.php';
 
-// delete condition
+/*Here, we create a process for the user to delete users from the database. This process gets the user id from the database using javascript, just very similarly to adding a user, only we delete from the database, and then keep the user on the current page. */
 if(isset($_GET['delete_id']))
 {
 	$sql_query="DELETE FROM user_CRUD WHERE user_id=".$_GET['delete_id'];
 	mysql_query($sql_query);
 	header("Location: $_SERVER[PHP_SELF]");
 }
-// delete condition
 
 ?>
 <!DOCTYPE html>
@@ -22,6 +23,14 @@ if(isset($_GET['delete_id']))
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 <script type="text/javascript">
+/*This function prompts the user that they want to edit the entry, and then uses the information from 
+
+javascript:edt_id('<?php echo $row[0]; ?>')"
+ 
+ which takes the database, sets it as an array, arranges the data as rows in that array, and then sets the user_id to row[0]
+
+as the "id" to append to the URL. Basically, we are taking information from SQL and using it in javascript to change a URL here.  
+ */
 function edt_id(id)
 {
 	if(confirm('Are You Sure You Want To Edit This Entry?'))
@@ -29,6 +38,8 @@ function edt_id(id)
 		window.location.href='edit_data.php?edit_id='+id;
 	}
 }
+
+/*Same as above.*/
 function delete_id(id)
 {
 	if(confirm('Are You Sure You Want To Delete This Entry?'))
@@ -103,6 +114,7 @@ function delete_id(id)
 
 	<tbody>
     <?php
+	/*Here, we select all the columns from the user_CRUD database table. Then we query the result of that. Then, we say, if the number of rows in that query we ran is greater than one (which means there is at leaast one entry) WHILE this condition is true, populate the table rows with row[1], row[2], and row[3], which are the first name, last name, and city name stored in MYSQL. The user_id is auto incremented and we will use it later. What this does is creates the table rows on the fly, using the MYSQL database information which is input from the user.*/
 	$sql_query="SELECT * FROM user_CRUD";
 	$result_set=mysql_query($sql_query);
 	if(mysql_num_rows($result_set)>0)
@@ -128,12 +140,14 @@ function edt_id(id)
 }
 
  -->
+ <!--If the user clicks the edit or delete "icons", the resulting href in the anchor tag will run the javascript script coded at the top-->
             <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
             <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
             </tr>
         <?php
 		}
 	}
+	/*If there is some problem, just parrot to the user that no data was found*/
 	else
 	{
 		?>
