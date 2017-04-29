@@ -32,7 +32,7 @@ last_name, user_city) VALUES
 
 You'll want to make sure the files are in the right folders and in the right place. I have included CRUD.zip for download which includes the proper file structure.
 
-The original code used tables and look circa 2002. I updated it with Bootstrap and now I think it looks a lot better.
+The original code used tables and looked circa 2002. I updated it with Bootstrap and now I think it looks a lot better.
 
 ### Original Code Taken From
 
