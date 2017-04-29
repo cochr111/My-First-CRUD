@@ -19,7 +19,7 @@ Once your table is created, you'll want to populate it with some basic entries. 
 
 ```mySQL
 
-INSERT INTO user_CRUD (user_id, first_name,last_name, user_city) VALUES
+INSERT INTO user_CRUD (user_id, first_name, last_name, user_city) VALUES
 (1, 'Walter', 'White', 'Albuquerque'),
 (2, 'Jesse', 'Pinkman', 'Albuquerque'),
 (3, 'Gus', 'Fring', 'Albuquerque'),
